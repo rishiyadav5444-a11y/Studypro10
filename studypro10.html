@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyPro 10</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#182033;line-height:1.5}
+header{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;padding:18px 7%;position:sticky;top:0;z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-size:25px;font-weight:800}.logo span{opacity:.8}
+nav a{color:white;text-decoration:none;margin-left:18px;font-weight:600}
+.hero{padding:70px 7%;background:linear-gradient(135deg,#eef2ff,#faf5ff);display:grid;grid-template-columns:1.5fr 1fr;gap:35px;align-items:center}
+.hero h1{font-size:48px;margin-bottom:12px}.hero h1 span{color:#5b4be7}
+.hero p{font-size:18px;color:#596174;max-width:650px}
+.btn{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:#5b4be7;color:#fff;text-decoration:none;font-weight:700;border:0;cursor:pointer}
+.hero-card{background:white;padding:30px;border-radius:22px;box-shadow:0 15px 40px #5b4be71c;text-align:center}
+.hero-card .big{font-size:70px}
+section{padding:50px 7%}.title{text-align:center;margin-bottom:28px}.title h2{font-size:32px}.title p{color:#687083}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.card{background:white;padding:22px;border-radius:16px;box-shadow:0 5px 18px #0000000b;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 25px #00000014}
+.card .icon{font-size:32px}.card h3{margin:8px 0 4px}.card p{color:#697386;font-size:14px}
+.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.resource{background:#fff;border-radius:16px;padding:24px;border-left:5px solid #5b4be7}
+.resource button{margin-top:15px;border:0;background:#eef2ff;color:#4f46e5;padding:9px 13px;border-radius:8px;font-weight:700;cursor:pointer}
+.practice{background:#111827;color:white;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.practice p{color:#c7cbd4}.quiz{background:white;color:#182033;padding:20px;border-radius:15px}
+.quiz button{margin:7px 5px 0 0;padding:9px 12px;border:1px solid #ddd;background:#f8fafc;border-radius:8px;cursor:pointer}
+#result{margin-top:12px;font-weight:700}
+.search{width:100%;max-width:600px;display:block;margin:0 auto 25px;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px}
+footer{background:#111827;color:#c7cbd4;text-align:center;padding:25px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.resources,.practice{grid-template-columns:1fr}nav a{display:none}}
+@media(max-width:500px){.hero h1{font-size:36px}.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">📚 StudyPro <span>10</span></div>
+<div><a href="#subjects">Subjects</a><a href="#resources">Resources</a><a href="#practice">Practice</a></div>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div>
+<h1>Study smarter with <span>StudyPro 10</span></h1>
+<p>Your simple Class 10 study hub for subjects, notes, important questions and quick practice.</p>
+<a class="btn" href="#subjects">Start Studying →</a>
+</div>
+<div class="hero-card"><div class="big">🎓</div><h2>Class 10 Learning Hub</h2><p>Learn • Practice • Improve</p></div>
+</section>
+
+<section id="subjects">
+<div class="title"><h2>📖 Subjects</h2><p>Choose a subject and start learning.</p></div>
+<input class="search" id="search" placeholder="🔍 Search a subject...">
+<div class="grid" id="subjectGrid">
+<div class="card subject"><div class="icon">➗</div><h3>Maths</h3><p>Concepts, formulas & practice</p></div>
+<div class="card subject"><div class="icon">🔬</div><h3>Science</h3><p>Physics, Chemistry & Biology</p></div>
+<div class="card subject"><div class="icon">🌍</div><h3>SST</h3><p>History, Geography, Civics & Economics</p></div>
+<div class="card subject"><div class="icon">📝</div><h3>Hindi</h3><p>Literature & grammar</p></div>
+<div class="card subject"><div class="icon">🔤</div><h3>English</h3><p>Literature & language skills</p></div>
+</div>
+</section>
+
+<section id="resources">
+<div class="title"><h2>📚 Study Resources</h2><p>Quick sections for exam preparation.</p></div>
+<div class="resources">
+<div class="resource"><h3>📒 Notes</h3><p>Quick revision notes and chapter concepts.</p><button onclick="showMsg('Notes section coming soon!')">Open Notes</button></div>
+<div class="resource"><h3>⭐ Important Questions</h3><p>Focus on questions that test key concepts.</p><button onclick="showMsg('Important Questions section coming soon!')">View Questions</button></div>
+<div class="resource"><h3>📄 PYQ Practice</h3><p>Practice previous-year style questions.</p><button onclick="showMsg('PYQ section coming soon!')">Practice PYQs</button></div>
+</div>
+</section>
+
+<section id="practice">
+<div class="practice">
+<div><h2>🧠 Quick Practice</h2><p>Test yourself with a simple Class 10 question.</p></div>
+<div class="quiz">
+<h3>What is the common difference of the AP: 3, 7, 11, 15?</h3>
+<button onclick="answer(false)">2</button><button onclick="answer(true)">4</button><button onclick="answer(false)">3</button>
+<div id="result"></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 StudyPro 10 • Learn. Practice. Improve. 📚</footer>
+
+<script>
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{
+ const q=search.value.toLowerCase();
+ document.querySelectorAll('.subject').forEach(c=>{
+  c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';
+ });
+});
+function answer(correct){
+ document.getElementById('result').textContent=correct?'✅ Correct! The common difference is 4.':'❌ Try again!';
+ document.getElementById('result').style.color=correct?'green':'crimson';
+}
+function showMsg(msg){alert(msg);}
+</script>
+</body>
+</html>
